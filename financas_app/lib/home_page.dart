@@ -17,11 +17,7 @@ class _HomeState extends State<Home> {
         // #docregion centered-text
         body: Center(
             // #docregion text
-            child: ButtonBar(
-          children: [
-            Text("oi"),
-            Text("ola"),
-          ],
+            child: Text('Olá Mundo!'),
         )
             // #enddocregion text
             ),

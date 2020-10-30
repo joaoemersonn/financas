@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "306948087102",
+    "firebase_url": "https://sercontabil-c0e06.firebaseio.com",
+    "project_id": "sercontabil-c0e06",
+    "storage_bucket": "sercontabil-c0e06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306948087102:android:4da2304522c2a03ad9e06f",
+        "android_client_info": {
+          "package_name": "br.com.jedevs.sercontabil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306948087102-ipiagqq30ukkthobtt3jp454433gcndc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxriU0vkyCl8uCuRWJI5eQGPZUqk7e5pU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306948087102-ipiagqq30ukkthobtt3jp454433gcndc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

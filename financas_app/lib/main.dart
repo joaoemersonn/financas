@@ -1,59 +1,50 @@
+import 'package:financas_app/app/avisos/avisos.dart';
+import 'package:financas_app/app/calendario/cadastrar_evento.dart';
+import 'package:financas_app/app/calendario/calendario_page.dart';
+import 'package:financas_app/app/contato/contato_page.dart';
+import 'package:financas_app/app/ged/ged_page.dart';
+import 'package:financas_app/app/home/home_page.dart';
+import 'package:financas_app/app/usuario/cadastrar_user.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
-import 'login.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'app/avisos/cadastrarAviso_page.dart';
+import 'app/spash/SplashScreem.dart';
+import 'shared/Constantes.dart';
+import 'app/login/login.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Map<String, WidgetBuilder> rotas = {
+      'home': (_) => Home(),
+      'login': (_) => Login(),
+      'ged': (_) => GedPage(),
+      'contato': (_) => Contato(),
+      'calendario': (_) => CalendarioPage(),
+      'avisos': (_) => AvisosPage(),
+      'cadastrar_aviso': (_) => CadastrarAviso(),
+      'cadastrar_usuario': (_) => CadastrarUserPage(),
+      'cadastrar_evento': (_) => CadastrarEvento()
+      //,
+      //'page_aviso': (_) => Aviso()
+    };
     return MaterialApp(
-      title: 'Finanças',
+      title: 'SerContábil',
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: [GlobalMaterialLocalizations.delegate],
+      supportedLocales: [const Locale('pt')],
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        backgroundColor: Constantes.CorPrincipal,
+        primarySwatch: Constantes.CorPrincipal,
+        //iconTheme: IconThemeData(color: Colors.blue)
       ),
-      home: MyHomePage(title: 'Finanças'),
+      home: Splash(),
+      routes: rotas,
     );
   }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return _introScreen();
-  }
-}
-
-Widget _introScreen() {
-  return Stack(
-    children: <Widget>[
-      SplashScreen(
-        seconds: 5,
-        gradientBackground: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [Colors.greenAccent, Colors.green],
-        ),
-        navigateAfterSeconds: LoginApp(),
-        loaderColor: Colors.transparent,
-      ),
-      Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/logo.png"),
-            fit: BoxFit.none,
-          ),
-        ),
-      ),
-    ],
-  );
 }
